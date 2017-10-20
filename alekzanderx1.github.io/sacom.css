@@ -1,0 +1,40 @@
+body { 
+	position: relative;
+	height: 100%;
+	background-color:rgb(41,41,57);
+}
+#About { padding-top:60px;
+			height: 600px;
+			background-color: rgb(41,41,57);
+			background-image: url("images/pattern.jpeg");
+ }
+#Education { padding-top:50px;
+			height: 500px;
+			background-color: green;
+ }
+ #Gallery { padding-top:50px;
+			height: 500px;
+			background-color: blue;
+ }
+ #Skills { padding-top:50px;
+			height: 500px;
+			background-color: yellow;
+ }
+ #showonload {
+		height: 75%;
+		margin: 50px;
+		border:1px solid black;
+		background-color: rgb(20,20,100);
+		box-shadow: -8px 8px 20px rgb(0,0,0);
+		color:white;
+		opacity: 0.5;
+ }
+ 
+ 
+ #computer{
+	 float:left;
+	 max-height: 50%;
+	 max-width: 50%;
+	 padding: 10px;
+ }
+ 
