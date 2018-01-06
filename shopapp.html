@@ -18,26 +18,32 @@
 </div>
 <div class="col-sm-6 col-xs-12">
 	<div class="container-fluid">
-	<h3 class="allincenter">Hello there, Let us make a list!</h3>
+	<h3 style="color:white;" class="header allincenter">Hello there, Let us make a list!</h3>
+	<hr />
 	<br /><br />
 	<!--start of the Angular app-->
 	<div ng-app="myShoppingList" ng-controller="myCtrl">
 		<ul>
-			<li ng-repeat="x in products track by $index">{{x}}
+			<li class="tile" ng-repeat="x in products track by $index">{{x}}
 						<span ng-click="removeItem($index)">&times;</span>
 			</li>
 		</ul>
+		<!--calls addItem() method on click of button which inserts addMe inoouts value in list"-->
+		<center>
 		<input ng-model="addMe">
-		<button ng-click="addItem()">Add</button>
+		<button class="btn btn-danger" ng-click="addItem()">Add</button>
 		<p>{{errortext}}</p>
+		
 		<br /><br />
+		<hr /><hr />
 		<!--To search for item in the list-->
-		<h3>Search for item:</h3>
+		<h3 class>Search for item:</h3>
 		<!--Bind the input with the search string-->
 		<p><input ng-model="search"></p>
+		</center>
 		<ul>
 			<!--ng-hide hides all entries if search string is empty, search string is used in filter with ng-repeat"-->
-			<li ng-hide="!search.length" ng-repeat="x in products | filter : search">
+			<li class="tile" ng-hide="!search.length" ng-repeat="x in products | filter : search">
 				{{ x }}
 			</li>
 		</ul>
