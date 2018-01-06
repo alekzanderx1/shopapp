@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Shopping App</title>
+<title>My Shopping List</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="shopapp.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--include jquery only when using bootstrap jquery plugins-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="shopapp.css">
 </head>
 <body>
-<div ng-app="myShoppingList" ng-controller="myCtrl">
-	<ul>
-		<li ng-repeat="x in products track by $index">{{x}}
-		            <span ng-click="removeItem($index)">&times;</span>
-		</li>
-	</ul>
-	<input ng-model="addMe">
-	<button ng-click="addItem()">Add</button>
+<div class="row" style="margin-top:20px">
+<div class="col-sm-3">
+<!--just for margin-->
 </div>
+<div class="col-sm-6 col-xs-12">
+	<div class="container-fluid">
+	<h3 class="allincenter">Hello there, Let us make a list!</h3>
+	<br /><br />
+	<!--start of the Angular app-->
+	<div ng-app="myShoppingList" ng-controller="myCtrl">
+		<ul>
+			<li ng-repeat="x in products track by $index">{{x}}
+						<span ng-click="removeItem($index)">&times;</span>
+			</li>
+		</ul>
+		<input ng-model="addMe">
+		<button ng-click="addItem()">Add</button>
+		<p>{{errortext}}</p>
+		<br /><br />
+		<!--To search for item in the list-->
+		<h3>Search for item:</h3>
+		<!--Bind the input with the search string-->
+		<p><input ng-model="search"></p>
+		<ul>
+			<!--ng-hide hides all entries if search string is empty, search string is used in filter with ng-repeat"-->
+			<li ng-hide="!search.length" ng-repeat="x in products | filter : search">
+				{{ x }}
+			</li>
+		</ul>
+	</div>
+	</div>
+</div>
+<div class="col-sm-3">
+<!--just for margin-->
+</div>
+</div>
+<script src="shopapp.js"></script>
 </body>
 </html>
