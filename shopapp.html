@@ -16,7 +16,7 @@
 <div class="col-sm-3">
 <!--just for margin-->
 </div>
-<div class="col-sm-6 col-xs-12">
+<div class="col-sm-6 col-xs-12" style="border:solid 1px #C70039;">
 	<div class="container-fluid">
 	<h3 style="color:white;" class="header allincenter">Hello there, Let us make a list!</h3>
 	<hr />
@@ -25,7 +25,7 @@
 	<div ng-app="myShoppingList" ng-controller="myCtrl">
 		<ul>
 			<li class="tile" ng-repeat="x in products track by $index">{{x}}
-						<span ng-click="removeItem($index)">&times;</span>
+						<span class="glyphicon glyphicon-remove" ng-click="removeItem($index)"></span>
 			</li>
 		</ul>
 		<!--calls addItem() method on click of button which inserts addMe inoouts value in list"-->
@@ -47,6 +47,7 @@
 				{{ x }}
 			</li>
 		</ul>
+		<hr />
 	</div>
 	</div>
 </div>

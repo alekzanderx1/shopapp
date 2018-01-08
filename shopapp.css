@@ -1,4 +1,7 @@
 /*To keep everything in center*/
+body{
+	font-family:'Trebuchet MS';
+}
 .allincenter
 {
 	width: 50%; 
@@ -10,7 +13,7 @@
 	display: block;
 	padding:3px;
 	margin:5px;
-	background-color: #ADD8E6;
+	background-color: #AEB6BF;
 	width:60%;
 	border-radius:5px;
 }
@@ -19,7 +22,10 @@
 {
 	padding:20px;
 	display:block;
-	background-color: #0000A0;
+	background-color: #581845;
 	font: white;
 	border-radius: 5px;
 }
+
+#C70039
+#ADD8E6;

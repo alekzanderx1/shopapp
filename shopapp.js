@@ -12,6 +12,7 @@ app.controller("myCtrl", function($scope) {
 		//when no duplicate is there
 		if ($scope.products.indexOf($scope.addMe) == -1) {
             $scope.products.push($scope.addMe);
+			$scope.addMe="";
         } else {
 			//when duplicate is found
             $scope.errortext = "The item is already in your shopping list.";
